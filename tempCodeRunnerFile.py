@@ -1,0 +1,1 @@
+(temp:=int(input()))

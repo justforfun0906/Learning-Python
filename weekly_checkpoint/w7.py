@@ -21,7 +21,7 @@ def initialize():
     records = []
     #read the initial_money and records from a file
     try:
-        with open('/home/justforfun/Learning-Python/weekly_checkpoint/record.txt', 'r') as fh:
+        with open('weekly_checkpoint/record.txt', 'r') as fh:
             file_li = fh.readlines()
             balance_str = file_li[0].strip()
             #make sure balance is a number
@@ -40,7 +40,7 @@ def initialize():
     except AssertionError as e:
         #invalid format of the record file
         print(e, ':invalid record, deleting the content of the file')
-        with open('/home/justforfun/Learning-Python/weekly_checkpoint/record.txt', 'w') as fh:
+        with open('weekly_checkpoint/record.txt', 'w') as fh:
             pass
         initial_money = handle_balance_input()
         

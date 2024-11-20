@@ -21,7 +21,7 @@ def initialize():
     records = []
     #read the initial_money and records from a file
     try:
-        with open('weekly_checkpoint/record.txt', 'r') as fh:
+        with open(os.path.join(os.path.dirname(__file__), 'record.txt'), 'r') as fh:
             file_li = fh.readlines()
             balance_str = file_li[0].strip()
             #make sure balance is a number

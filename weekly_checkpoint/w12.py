@@ -12,7 +12,7 @@ class Records:
     flatten_category_list = ['expense', 'food', 'meal', 'snack', 'drink', 'transportation', 'bus', 'railway', 'income', 'salary', 'bonus']
     def __init__(self):
         #read the initial_money and records from a file
-        self.categories = Categories()
+        self.categories = Categories() #create a Categories object to use its methods
         try:
             file_path = os.path.join(os.path.dirname(__file__), 'record.txt')
             with open(file_path, 'r') as fh:
@@ -114,8 +114,6 @@ class Records:
         print("Now you have {} dollars.".format(self._initial_money))
 class Categories:
     """Maintain the category list and provide some methods"""
-    _category_list = ['expense', ['food', ['meal', 'snack', 'drink'], 'transportation', ['bus', 'railway']], 'income', ['salary', 'bonus']]
-    _flatten_category_list = ['expense', 'food', 'meal', 'snack', 'drink', 'transportation', 'bus', 'railway', 'income', 'salary', 'bonus']
     def __init__(self):
         self._category_list = ['expense', ['food', ['meal', 'snack', 'drink'], 'transportation', ['bus', 'railway']], 'income', ['salary', 'bonus']]
         self._flatten_category_list = ['expense', 'food', 'meal', 'snack', 'drink', 'transportation', 'bus', 'railway', 'income', 'salary', 'bonus']

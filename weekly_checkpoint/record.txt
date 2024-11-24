@@ -1,3 +1,4 @@
--50
+450
 meal breakfast -50
 food apple -100
+salary jan 500

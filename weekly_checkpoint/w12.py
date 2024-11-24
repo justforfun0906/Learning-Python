@@ -89,18 +89,18 @@ class Records:
         except AssertionError as e:
             print(e)
             return
-        candidata = []
+        candidate = []
         for x in self._records:
             #put all the records with the same description into a list
-            if(x._category == in_str):
-                candidata.append(x)
+            if(x._description == in_str):
+                candidate.append(x)
         #if there's no such record
-        if len(candidata) == 0:
+        if len(candidate) == 0:
             print(f"There's no such record with description '{in_str}'. Fail to delete a record.")
         #has only one record with the description
-        elif(len(candidata) == 1):
-            self._records.remove(candidata[0])
-            self._initial_money -= candidata[0]._amount
+        elif(len(candidate) == 1):
+            self._records.remove(candidate[0])
+            self._initial_money -= candidate[0]._amount
             self.save()
     def find(self, in_str):
         subcate = self.categories.find_subcate(in_str)
@@ -130,8 +130,7 @@ class Categories:
                 for index, child in enumerate(category_list):
                     yield from find_subcate_gen(category, child, found)
                     if child == category and index + 1 <len(category_list) and type(category_list[index+1]) == list:
-                        found = True
-                        yield from find_subcate_gen(category, category_list[index+1], found)
+                        yield from find_subcate_gen(category, category_list[index+1], True)
             else:
                 if category_list == category or found:
                     yield category_list

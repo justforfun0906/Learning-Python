@@ -1,6 +1,4 @@
-11915
-meal breakfast -50
-food apple -100
-railway MRT -35
-bonus yahoo 2000
-salary Feb 10000
+99
+meal A -1
+bus A -1
+bonus C 1
